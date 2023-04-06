@@ -1,4 +1,17 @@
 {
+  "name": "waterudoin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seeds.js",
+    "lint": "npx eslint **/*.js",
+    "prettier": "npx prettier --check **/*.js"
+  },
+  "keywords": [],
+  "author": "",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
