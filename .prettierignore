@@ -1,1 +1,5 @@
 *.md
+.gitignore
+.env.EXAMPLE
+.eslintignore
+.prettierignore
