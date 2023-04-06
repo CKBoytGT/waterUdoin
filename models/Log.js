@@ -24,6 +24,10 @@ Log.init({
       key: "id",
     },
   },
+  date: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  },
   sequelize,
   timestamps: false,
   freezeTableName: true,
