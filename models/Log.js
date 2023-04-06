@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require("../config/connnection");
+const sequelize = require('../config/connnection');
 
 class Log extends Model {}
 
@@ -8,27 +8,27 @@ Log.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true,
+    autoIncrement: true
   },
   amount: {
     type: DataTypes.INTEGER,
     allowNull: false,
     validate: {
-      min: 0,
-    },
+      min: 0
+    }
   },
   user_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: "user",
-      key: "id",
-    },
+      model: 'user',
+      key: 'id'
+    }
   },
   sequelize,
   timestamps: false,
   freezeTableName: true,
   underscored: true,
-  modelName: "log",
+  modelName: 'log'
 });
 
 module.exports = Log;
