@@ -43,9 +43,9 @@ const registerHandler = async (event) => {
     }
   };
   document
-  .querySelector('.login-container')
+  .querySelector('.login-form')
   .addEventListener('submit', loginHandler);
 
 document
-  .querySelector('.register-container')
+  .querySelector('.register-form')
   .addEventListener('submit', registerHandler);
