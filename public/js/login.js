@@ -48,3 +48,4 @@ document
 document
   .querySelector('.register-container')
   .addEventListener('submit', registerHandler);
+
