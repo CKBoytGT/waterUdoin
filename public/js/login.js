@@ -1,25 +1,40 @@
+/* eslint-disable indent */
+/* eslint-disable spaced-comment */
+/* eslint-disable no-trailing-spaces */
 const loginHandler = async (event) => {
-    event.preventDefault();
 
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
+  event.preventDefault();
 
-    //need to verify routes when routes are made
-    if (email && password) {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' }
-        });
+  const email = document.querySelector('#email').value.trim();
+  const password = document.querySelector('#password').value.trim();
 
-        if (response.ok) {
-            document.location.resplace('/dashboard?');
-        } else {
-            alert(response.statusText);
-        }
+  //need to verify routes when routes are made
+  if (email && password) {
+
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ 
+         email,
+         password
+         }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+
+      document.location.resplace('/dashboard?');
+    
+    } else {
+
+      alert(response.statusText);
+  
     }
+  
+  }
+
 };
 const registerHandler = async (event) => {
+
   event.preventDefault();
 
   const name = document.querySelector('#register-name').value.trim();
@@ -28,18 +43,29 @@ const registerHandler = async (event) => {
 
   //need to verify routes when routes are made
   if (name && email && password) {
+
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ 
+        name, 
+        email, 
+        password 
+      }),
       headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
+
       document.location.replace('/profile');
+    
     } else {
+
       alert(response.statusText);
-    }
-  }
+    
+}
+  
+}
+
 };
 document
   .querySelector('.login-container')
@@ -48,4 +74,3 @@ document
 document
   .querySelector('.register-container')
   .addEventListener('submit', registerHandler);
-
