@@ -14,25 +14,19 @@ Log.init({
     type: DataTypes.INTEGER,
     allowNull: false,
     validate: {
+      isNumeric: true,
       min: 0
-    }
+    },
   },
-  user_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'user',
-      key: 'id'
-    }
-  },
-  date: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
-  },
+ 
+},
+{
   sequelize,
-  timestamps: false,
   freezeTableName: true,
   underscored: true,
   modelName: 'log'
-});
+}
+
+);
 
 module.exports = Log;
