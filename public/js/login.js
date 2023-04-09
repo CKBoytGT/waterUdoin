@@ -66,3 +66,4 @@ document.querySelector('.login-form').addEventListener('submit', loginHandler);
 document
   .querySelector('.register-form')
   .addEventListener('submit', registerHandler);
+
