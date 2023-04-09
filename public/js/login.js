@@ -17,8 +17,10 @@ const loginHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+
   }
 };
+
 
 const registerHandler = async (event) => {
   event.preventDefault();
@@ -31,12 +33,15 @@ const registerHandler = async (event) => {
   if (name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
+
       body: JSON.stringify({ name, email, password }),
+
       headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
       document.location.replace('/profile');
+
     } else {
       alert(response.statusText);
     }
@@ -46,4 +51,7 @@ document.querySelector('.login-form').addEventListener('submit', loginHandler);
 
 document
   .querySelector('.register-form')
+
+
   .addEventListener('submit', registerHandler);
+
