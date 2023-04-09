@@ -1,18 +1,36 @@
 require('dotenv').config();
 
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Initiate express
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 // change to const hbs = exphbs.create({ helpers }); when helpers are added
+
+const sess = {
+  secret: 'Secret',
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict'
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
 
 // Template engine
 app.engine('handlebars', hbs.engine);
