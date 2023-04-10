@@ -1,0 +1,25 @@
+ <!--navigation bar-->
+  <div class="bg-gray-100 ">
+      <nav class=" px-10 mx-auto py-2 md:flex md:items-center md:justify-between">
+        <div class="flex items-center justify-between">
+            <h1><img class="h-12" src=" " alt="" /></h1>
+          <button class="h-6 w-6 md:hidden" id="menu">
+         
+          </button>
+        </div>
+        <div class="hidden  flex-col items-center md:flex md:flex-row md:space-x-6 " id="links"> 
+        
+              <a href="/" class=" text-xl hover:text-blue-500"> Home</a>
+              {{#if loggedIn}}
+              <a href="/dashboard" class=" text-xl hover:text-blue-500"> Dashbord</a>
+               <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+              <a href="/login" class=" text-xl hover:text-blue-500"> Login</a>
+              {{/if}}
+              
+             <!--signup button-->
+              <button class="btn bg-blue-500 text-white px-8 py-3 hover:bg-blue-300 rounded-full">Signup</button>
+        
+        </div>
+      </nav>
+    </div>

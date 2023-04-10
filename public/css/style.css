@@ -20,10 +20,11 @@ span{
   
 }
 /*the colorful circle*/
-.on{
-   background-color:  #0067B3; 
-}
 
+input{
+    border: none;
+    
+}
 /*chart image--temporarly..until we have the actual chart*/
 .chart{
     margin: 80px;
