@@ -29,11 +29,13 @@ Log.init(
       defaultValue: DataTypes.NOW
     }
   },
-  sequelize,
-  timestamps: false,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'log'
-});
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'log'
+  }
+);
 
 module.exports = Log;
