@@ -41,11 +41,11 @@ User.init(
     },
     water_goal: {
       type: DataTypes.INTEGER,
-      allowNull: true,
       validate: {
-        isInt: true,
+        isNumeric: true,
         min: 0
-      }
+      },
+      defaultValue: 0
     }
   },
   {

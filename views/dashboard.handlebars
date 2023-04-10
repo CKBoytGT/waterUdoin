@@ -80,6 +80,36 @@
     </div>
 </div>
 
+    <div>
+    <div class="chart-container" style="position: relative; height:60vh; width:150vw">
+<canvas id="line-chart"></canvas>
+</div>
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+<script>
+	new Chart(document.getElementById("line-chart"), {
+		type : 'line',
+		data : {
+			labels : [ 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ],
+			datasets : [
+					{
+						data : [ 5, 6, 5, 6, 6,
+								6, 5, 6, 5, 6, 5, 7, 5, 6, 7],
+						label : "Last 30 Days of Intake",
+						borderColor : "#40B0DF",
+						fill : false
+					}]
+		},
+		options : {
+			title : {
+				display : true,
+				text : 'Chart JS Line Chart Example'
+			}
+		}
+	});
+</script>
+</div>
+
 <!--Today intake circles-->
 <div class="text-4xl my-6 font-bold">
     TODAY'S INTAKE
