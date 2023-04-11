@@ -9,45 +9,47 @@ const userData = require('./userData.json');
 const logData = require('./logData.json');
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
 
-    await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
+  await sequelize.sync({ force: true });
 
+  await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true
+  });
 
+  const createdUsers = await User.findAll(); // Query the created users
 
+  // create an array to store the log creation as promises
+  const logPromises = [];
+  // loops for the current log entry being processed.
+  logData.forEach((log) => {
 
-    const createdUsers = await User.findAll(); // Query the created users
+    // find the user that matches the username on the log //
+    const user = createdUsers.find((user) => user.username === log.username);
 
-    // create an array to store the log creation as promises
-    const logPromises = [];
-    // loops for the current log entry being processed.
-    logData.forEach((log) => {
-        // find the user that matches the username on the log //
-        const user = createdUsers.find((user) => user.username === log.username);
-    
-        if (user) {
-            // showing entry inserted for the users //
-            console.log(`Inserting log for user ${user.username}:`, log);
-            logPromises.push(
-                Log.create({
-                    ...log,
-                    user_id: user.id,
-                })
-            );
-        }
-    });
-    // after the loop is done, the logPromise array will be filled with promises that will be resolved when the log is created //
-    await Promise.all(logPromises);
+    if (user) {
 
-    console.log('\n---- USERS SEEDED ----\n');
-    console.log('\n---- LOGS SEEDED ----\n');
+      // showing entry inserted for the users //
+      console.log(`Inserting log for user ${user.username}:`, log);
+      logPromises.push(
+        Log.create({
+          ...log,
+          user_id: user.id
+        })
+      );
 
-    await sequelize.close();
+    }
+
+  });
+  // after the loop is done, the logPromise array will be filled with promises that will be resolved when the log is created //
+  await Promise.all(logPromises);
+
+  console.log('\n---- USERS SEEDED ----\n');
+  console.log('\n---- LOGS SEEDED ----\n');
+
+  await sequelize.close();
+
 };
 
 // call it! //
 seedDatabase();
-
