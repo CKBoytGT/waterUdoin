@@ -1,12 +1,61 @@
-{{>header}}
-<!--chart image..until the chart is ready so we can add it here  //Maha-->
-<div class="flex justify-between">
+<div class="bg-gray-100 ">
+      <nav class=" px-10 mx-auto py-2 md:flex md:items-center md:justify-between">
+        <div class="flex items-center justify-between">
+            <h1><img class="h-12" src=" " alt="" /></h1>
+          <button class="h-6 w-6 md:hidden" id="menu">
+         
+          </button>
+        </div>
+        <div class="hidden  flex-col items-center md:flex md:flex-row md:space-x-6 " id="links"> 
+        
+              <a href="" class=" text-xl hover:text-blue-500"> Home</a>
+              <a href="#info.html" class=" text-xl hover:text-blue-500"> Dashbord</a>
+              <a href="" class=" text-xl hover:text-blue-500"> Login</a>
+
+              <button class="btn bg-blue-500 text-white px-8 py-3 hover:bg-blue-300 rounded-full">Signup</button>
+        
+        </div>
+
+     
+      </nav>
+    </div>
+<!---chart-->
+<div class="flex justify-between flex-wrap">
 <div class="chart">
     <h2 class="text-4xl my-6">MONTHLY INTAKE</h2>
-    <img src="./assets/basic-charts-column-chart.png" alt="" width="300px">
-</div>
+    
 
-<!--leaderboard-->
+    <div>
+    <div class="chart-container" style=" height:60vh; width:40vw">
+<canvas id="line-chart"></canvas>
+</div>
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+<script>
+	new Chart(document.getElementById("line-chart"), {
+		type : 'line',
+		data : {
+			labels : [ 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ],
+			datasets : [
+					{
+						data : [ 5, 6, 5, 6, 6,
+								6, 5, 6, 5, 6, 5, 7, 5, 6, 7],
+						label : "Last 30 Days of Intake",
+						borderColor : "#40B0DF",
+						fill : false
+					}]
+		},
+		options : {
+			title : {
+				display : true,
+				text : 'Chart JS Line Chart Example'
+			}
+		}
+	});
+</script>
+
+</div>
+</div>
 <div class="flex justify-end items-center">
     <div class="p-5  bg-gray-100 mr-40 mt-20">
         <h1 class="text-4xl mb-2">LEADERBOARD</h1>
@@ -81,26 +130,25 @@
     </div>
 </div>
 
-<!--Today intake circles-->
-<div class="text-4xl ml-20 my-6">
+
+<div class="text-4xl ml-20 my-6 basis-1/2">
     TODAY'S INTAKE
 </div>
-    <div class="bullets">
+    <div class="bullets basis-1/2">
         <div class="spans">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span id ="circle"  onclick="myFunction()"></span>
+            <span id ="circle1"  onclick="myFunction1()" ></span>
+            <span id ="circle2"  onclick="myFunction2()"></span>
+            <span id ="circle3"  onclick="myFunction3()"></span>
+            <span id ="circle4"  onclick="myFunction4()"></span>
+            <span id ="circle5"  onclick="myFunction5()"></span>
+            <span id ="circle6"  onclick="myFunction6()"></span>
+            <span id ="circle7"  onclick="myFunction7()"></span>
         </div>
+        <div >Intervals based on 8 fl oz glasses |<a href=""> Update your metrics></a></div>
     </div>
 
     
 
 </body>
 </html>
-
-{{>footer}}

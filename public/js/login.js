@@ -54,3 +54,4 @@ document
 
 
   .addEventListener('submit', registerHandler);
+
