@@ -1,0 +1,200 @@
+[
+  {
+    "user_id": 1,
+    "amount": "50",
+    "date": "2022-03-14"
+  },
+
+  {
+    "user_id": 1,
+    "amount": "67",
+    "date": "2022-03-15"
+  },
+  {
+    "user_id": 1,
+    "amount": "32",
+    "date": "2022-03-16"
+  },
+  {
+    "user_id": 1,
+    "amount": "86",
+    "date": "2022-03-17"
+  },
+  {
+    "user_id": 1,
+    "amount": "53",
+    "date": "2022-03-18"
+  },
+  {
+    "user_id": 1,
+    "amount": "71",
+    "date": "2022-03-19"
+  },
+  {
+    "user_id": 1,
+    "amount": "54",
+    "date": "2022-03-20"
+  },
+  {
+    "user_id": 1,
+    "amount": "78",
+    "date": "2022-03-21"
+  },
+  {
+    "user_id": 1,
+    "amount": "41",
+    "date": "2022-03-22"
+  },
+  {
+    "user_id": 1,
+    "amount": "68",
+    "date": "2022-03-23"
+  },
+  {
+    "user_id": 1,
+    "amount": "21",
+    "date": "2022-03-24"
+  },
+  {
+    "user_id": 1,
+    "amount": "47",
+    "date": "2022-03-25"
+  },
+  {
+    "user_id": 1,
+    "amount": "90",
+    "date": "2022-03-26"
+  },
+  {
+    "user_id": 1,
+    "amount": "50",
+    "date": "2022-03-27"
+  },
+  {
+    "user_id": 1,
+    "amount": "73",
+    "date": "2022-03-28"
+  },
+  {
+    "user_id": 1,
+    "amount": "57",
+    "date": "2022-03-29"
+  },
+  {
+    "user_id": 1,
+    "amount": "90",
+    "date": "2022-03-30"
+  },
+  {
+    "user_id": 1,
+    "amount": "63",
+    "date": "2022-03-31"
+  },
+  {
+    "user_id": 1,
+    "amount": "72",
+    "date": "2022-04-1"
+  },
+  {
+    "user_id": 1,
+    "amount": "81",
+    "date": "2022-04-2"
+  },
+  {
+    "user_id": 1,
+    "amount": "71",
+    "date": "2022-04-3"
+  },
+  {
+    "user_id": 1,
+    "amount": "31",
+    "date": "2022-04-4"
+  },
+  {
+    "user_id": 1,
+    "amount": "90",
+    "date": "2022-04-5"
+  },
+  {
+    "user_id": 1,
+    "amount": "72",
+    "date": "2022-04-6"
+  },
+  {
+    "user_id": 1,
+    "amount": "34",
+    "date": "2022-04-7"
+  },
+  {
+    "user_id": 1,
+    "amount": "21",
+    "date": "2022-04-8"
+  },
+  {
+    "user_id": 1,
+    "amount": "10",
+    "date": "2022-04-9"
+  },
+  {
+    "user_id": 1,
+    "amount": "73",
+    "date": "2022-04-10"
+  },
+  {
+    "user_id": 1,
+    "amount": "37",
+    "date": "2022-04-11"
+  },
+  {
+    "user_id": 1,
+    "amount": "61",
+    "date": "2022-04-12"
+  },
+  {
+    "user_id": 1,
+    "amount": "82",
+    "date": "2022-04-13"
+  },
+
+  {
+    "user_id": 2,
+    "amount": "65",
+    "date": "2022-04-10"
+  },
+  {
+    "user_id": 2,
+    "amount": "41",
+    "date": "2022-04-11"
+  },
+  {
+    "user_id": 2,
+    "amount": "12",
+    "date": "2022-04-12"
+  },
+  {
+    "user_id": 2,
+    "amount": "65",
+    "date": "2022-04-13"
+  },
+
+  {
+    "user_id": 3,
+    "amount": "65",
+    "date": "2022-04-10"
+  },
+  {
+    "user_id": 3,
+    "amount": "65",
+    "date": "2022-04-11"
+  },
+  {
+    "user_id": 3,
+    "amount": "65",
+    "date": "2022-04-12"
+  },
+  {
+    "user_id": 3,
+    "amount": "65",
+    "date": "2022-04-13"
+  }
+]
