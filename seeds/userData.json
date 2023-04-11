@@ -1,0 +1,21 @@
+[
+    {
+      "username": "Christina",
+      "email": "test1@gmail.com",
+      "password": "password1",
+      "water_goal": 70
+    },
+    {
+      "username": "Maha",
+      "email": "test2@gmail.com",
+      "password": "password2",
+      "water_goal": 65
+    },
+    {
+      "username": "Hunter",
+      "email": "test3@gmail.com",
+      "password": "password3",
+      "water_goal": 70
+    }
+  ]
+  
