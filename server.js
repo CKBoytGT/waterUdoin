@@ -1,20 +1,23 @@
-require('dotenv').config();
-
+// dependencies
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+// routes directory
 const routes = require('./controllers');
+// sequelize
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// Initiate express
+// initiate express
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// set up handlebars.js engine with helpers
 const hbs = exphbs.create({ helpers });
-// change to const hbs = exphbs.create({ helpers }); when helpers are added
 
+// login session
 const sess = {
   secret: 'Secret',
   cookie: {
@@ -32,26 +35,22 @@ const sess = {
 
 app.use(session(sess));
 
-// Template engine
+// template engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(express.static('public'));
 
-// Middleware
+// middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// static files location
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Use routes
+// use routes
 app.use(routes);
 
-// Start the server after establishing a connection to the database
+// start the server after establishing a connection to the database
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
 });
-
-// testing dotenv by console.log // -- Tien
-console.log('DB_NAME:', process.env.DB_NAME);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);

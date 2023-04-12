@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User } = require('../../models');
 
 // create a new user account
 router.post('/', async (req, res) => {
@@ -90,5 +90,9 @@ router.post('/logout', (req, res) => {
   }
 
 });
+
+// TODO: update user's water goal
+
+// TODO: calculate user's leaderboard score (today's intake + 30 days?)
 
 module.exports = router;
