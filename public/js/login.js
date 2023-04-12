@@ -5,7 +5,6 @@ const loginHandler = async (event) => {
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
 
-  // need to verify routes when routes are made
   if (email && password) {
 
     const response = await fetch('/api/users/login', {
@@ -17,7 +16,7 @@ const loginHandler = async (event) => {
 
     if (response.ok) {
 
-      document.location.resplace('/dashboard?');
+      document.location.replace('/dashboard');
 
     } else {
 
@@ -33,24 +32,26 @@ const registerHandler = async (event) => {
 
   event.preventDefault();
 
-  const name = document.querySelector('#register-name').value.trim();
+  const username = document.querySelector('#register-name').value.trim();
   const email = document.querySelector('#register-email').value.trim();
   const password = document.querySelector('#register-password').value.trim();
 
-  // need to verify routes when routes are made
-  if (name && email && password) {
+  if (username && email && password) {
 
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name,
+      body: JSON.stringify({
+        username,
         email,
-        password }),
+        password,
+        water_goal: 64 // default water intake (eight 8 oz glasses)
+      }),
       headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
 
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
 
     } else {
 
@@ -61,9 +62,9 @@ const registerHandler = async (event) => {
   }
 
 };
-document.querySelector('.login-form').addEventListener('submit', loginHandler);
+
+document.querySelector('#login-form').addEventListener('submit', loginHandler);
 
 document
-  .querySelector('.register-form')
+  .querySelector('#signup-form')
   .addEventListener('submit', registerHandler);
-

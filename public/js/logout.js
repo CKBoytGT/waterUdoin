@@ -1,4 +1,3 @@
-// need to verify routes when routes are made
 const logout = async () => {
 
   const response = await fetch('/api/users/logout', {
