@@ -27,7 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // find logged in user based on session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Log }]
+      include: { model: Log }
     });
 
     const user = userData.get({ plain: true });
@@ -59,20 +59,20 @@ router.get('/login', (req, res) => {
 
 });
 
-router.get('/chart', async (req, res) => {
+// router.get('/chart', async (req, res) => {
 
-  try {
+//   try {
 
-    const userData = await User.findAll({ include: [Log] });
+//     const userData = await User.findAll({ include: [Log] });
 
-    // separte all the usernames and the log data. with the log data we will need to add up all the amount drank
+//     // separte all the usernames and the log data. with the log data we will need to add up all the amount drank
 
-  } catch (err) {
+//   } catch (err) {
 
-    console.log(err);
+//     console.log(err);
 
-  }
+//   }
 
-});
+// });
 
 module.exports = router;

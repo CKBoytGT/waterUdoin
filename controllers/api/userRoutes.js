@@ -91,7 +91,29 @@ router.post('/logout', (req, res) => {
 
 });
 
-// TODO: update user's water goal
+// update user's water goal
+router.put('/goal', async (req, res) => {
+
+  try {
+
+    const userUpdate = await User.update(
+      { water_goal: req.body.waterGoal },
+      {
+        where: {
+          id: req.session.user_id
+        }
+      }
+    );
+
+    res.status(200).json(userUpdate);
+
+  } catch (err) {
+
+    res.status(400).json(err);
+
+  }
+
+});
 
 // TODO: calculate user's leaderboard score (today's intake + 30 days?)
 
