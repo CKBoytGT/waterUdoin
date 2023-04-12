@@ -1,16 +1,16 @@
 /*the circles for today's intake -- dashboard page*/
-.bullets{
-    display: flex;
-    padding: 25px;
+.bullets {
+  display: flex;
+  padding: 25px;
 }
 
-.spans{
-    flex: 1;
-    display: flex;
-    margin-left: 50PX;
+.spans {
+  flex: 1;
+  display: flex;
+  margin-left: 50px;
 }
 /*each circle*/
-span{
+/* span{
     width: 60px;
     height: 60px;
     background-color: #ddd;
@@ -18,14 +18,13 @@ span{
     border-radius: 50%;
     
   
-}
+} */
 /*the colorful circle*/
-.on{
-   background-color:  #0067B3; 
+.on {
+  background-color: #0067b3;
 }
 
 /*chart image--temporarly..until we have the actual chart*/
-.chart{
-    margin: 80px;
-
+.chart {
+  margin: 80px;
 }
