@@ -1,91 +1,53 @@
- <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center h-screen"
-    >
-      <div
-        class="bg-white p-4 rounded-lg shadow-md w-full md:w-4/5 lg:w-3/5 mx-auto"
-      >
-        <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
-        <form class="space-y-4">
-          <div>
-            <label class="block mb-2 font-semibold">Email</label>
-            <input
-              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email address"
-              required
-            />
-          </div>
-          <div>
-            <label class="block mb-2 font-semibold">Password</label>
-            <input
-              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-          <div class="flex justify-end">
-            <a class="text-blue-500 hover:underline" href="#"
-              >Forgot Password?</a
-            >
-          </div>
-          <button
-            class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
-            type="submit"
-          >
-            Login
-          </button>
-        </form>
+<section
+  class="h-full max-w-5xl mx-auto flex flex-col md:flex-row items-center text-black py-10 px-8 space-y-6 md:space-y-0 md:space-x-20">
+  <div class="bg-white p-4 rounded-lg shadow-md flex flex-col w-full">
+    <h2 class="text-2xl font-bold text-center mb-2 text-blue-700">Log In</h2>
+    <form id="login-form" class="space-y-4">
+      <div>
+        <label class="block mb-2 font-semibold">Email</label>
+        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" type="email"
+          name="email" id="email" placeholder="Enter your email address" required />
       </div>
-      <div
-        class="bg-white p-4 rounded-lg shadow-md w-full md:w-4/5 lg:w-3/5 mx-auto"
-      >
-        <h2 class="text-center text-xl font-bold mb-4">Register</h2>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2"> Username </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="register-name"
-            type="text"
-            placeholder="Enter your username"
-          />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2"> Email </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="register-email"
-            type="email"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 font-bold mb-2"> Password </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="register-password"
-            type="password"
-            placeholder="Enter your password"
-          />
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Signup
-          </button>
-          <a
-            class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-            href="#"
-          >
-            Already have an account?
-          </a>
-        </div>
+      <div>
+        <label class="block mb-2 font-semibold">Password</label>
+        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" type="password"
+          name="password" id="password" placeholder="Enter your password" required />
       </div>
+      <div class="text-center">
+        <button
+          class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-2 px-6 rounded-full text-xl shadow-md"
+          type="submit">
+          LOG IN
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="bg-white p-4 rounded-lg shadow-md flex flex-col w-full">
+    <h2 class="text-2xl font-bold text-center mb-2 text-blue-700">Register</h2>
+    <form id="signup-form" class="space-y-4">
+      <div>
+        <label class="block mb-2 font-semibold">Username</label>
+        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" id="register-name"
+          type="text" placeholder="Enter your desired username" />
+      </div>
+      <div>
+        <label class="block mb-2 font-semibold">Email</label>
+        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" id="register-email"
+          type="email" placeholder="Enter your email address" />
+      </div>
+      <div>
+        <label class="block mb-2 font-semibold">Password</label>
+        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700"
+          id="register-password" type="password" placeholder="Enter a secure password" />
+      </div>
+      <div class="text-center">
+        <button
+          class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-2 px-6 rounded-full text-xl shadow-md"
+          type="submit">
+          SIGN UP
+        </button>
+      </div>
+    </form>
+</section>
 
-  <script src="/js/login.js" type="application/javascript"></script>
+<script src="/js/login.js" type="application/javascript"></script>

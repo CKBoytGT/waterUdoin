@@ -43,8 +43,7 @@ const registerHandler = async (event) => {
       body: JSON.stringify({
         username,
         email,
-        password,
-        water_goal: 64 // default water intake (eight 8 oz glasses)
+        password
       }),
       headers: { 'Content-Type': 'application/json' }
     });
