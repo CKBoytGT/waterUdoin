@@ -121,7 +121,17 @@
     <div class="text-4xl my-6 font-bold">
         TODAY'S INTAKE
     </div>
-    <div class="bullets">
+    <form id="intake-form">
+        <label for="amount">Today I have had</label>
+        <input id="amount" type="number"><span>glasses of water.</span>
+        <button type="submit">Update</button>
+    </form>
+    <form id="goal-form">
+        <label for="goal">My daily goal is</label>
+        <input id="goal" type="number"><span>glasses of water</span>
+        <button type="submit">Update</button>
+    </form>
+    {{!-- <div class="bullets">
         </tr>
 
         <h3 class="mb-4 font-semibold text-gray-900 dark:text-white"></h3>
@@ -177,11 +187,7 @@
 
         </ul>
 
-        <tr />
+        <tr /> --}}
     </div>
 
-
-
-    </body>
-
-    </html>
+    <script src="/js/intake.js" type="application/javascript"></script>

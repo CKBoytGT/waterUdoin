@@ -45,7 +45,7 @@ User.init(
         isNumeric: true,
         min: 0
       },
-      defaultValue: 0
+      defaultValue: 64
     }
   },
   {
