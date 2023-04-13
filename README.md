@@ -9,11 +9,18 @@ waterUdoin is a hydration tracking app that helps motivate you towards your goal
 
 </div>
 
+## Links for the Project
+[github page](https://github.com/CKBoytGT/waterUdoin)
+
+[Heroku]()
 ## Usage
 Sign up for an account, log in and use the "TRACK INTAKE" feature on your dashboard to keep track of your water intake throughout the day. Each symbol represents one 8 fl oz glass of water. The default is five, but you can receive an amount specific to your needs by entering your info under "Update your metrics."
 
 ## Screenshots
-Pending.
+![screen shot of the project](./public/assets/homepage.PNG)
+![](./public/assets/loginpage.PNG)
+![](./public/assets/dashboard.PNG)
+![](./public/assets/chartjs.PNG)
 
 ## Authors
 - [Maha Abdelnabi](https://github.com/Maha-Abdelnabi)
@@ -22,3 +29,6 @@ Pending.
 - [Graham Knox](https://github.com/Agilitylvl99)
 - [Quoc-Tien Ton](https://github.com/TimothyLai1121)
 - [Hunter Wilson](https://github.com/HunterWilson1)
+
+## Install
+Clone GitHub Repository to local machine & run "npm install" to download all prerequisite packages.
