@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Log } = require('../models');
 const { Op } = require('sequelize');
 const withAuth = require('../utils/auth');
+// const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
 
@@ -66,6 +67,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const monthly = monthlyData.map((log) => log.get({ plain: true }));
 
+    // TODO: get this working after class
+    // const leaderData = await sequelize.query(
+    //   'SELECT user.username, log.amount, (log.amount / user.water_goal * 100) AS "percentReached" FROM log INNER JOIN user ON log.user_id = user.id AND log.date LIKE "2023-04-13%" ORDER BY "percentReached" DESC'
+    // );
+
+    // const leaders = leaderData.map((user) => user.get({ plain: true }));
+
     res.render('dashboard', {
       ...user,
       monthly,
@@ -93,21 +101,5 @@ router.get('/login', (req, res) => {
   res.render('login');
 
 });
-
-// router.get('/chart', async (req, res) => {
-
-//   try {
-
-//     const userData = await User.findAll({ include: [Log] });
-
-//     // separte all the usernames and the log data. with the log data we will need to add up all the amount drank
-
-//   } catch (err) {
-
-//     console.log(err);
-
-//   }
-
-// });
 
 module.exports = router;
