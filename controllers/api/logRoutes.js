@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
   try {
 
     // get previous log from today if it exists
-    const todayStart = new Date(new Date().setHours(0, 0, 0, 0));
+    const todayStart = new Date().setHours(0, 0, 0, 0);
     const now = new Date();
 
     const logData = await Log.findAll({
@@ -59,14 +59,5 @@ router.post('/', async (req, res) => {
   }
 
 });
-
-// TODO: get most recent log for a user
-// router.get('/', withAuth, async (req, res) => {});
-
-// const logs = logData.map((log) => log.get({ plain: true }));
-
-// TODO: get last 30 days logs for a user (based on user id?), inputting 0 for days not logged
-
-// TODO: get user's water goal
 
 module.exports = router;
