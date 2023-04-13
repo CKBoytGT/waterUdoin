@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Log } = require('../models');
+const { Op } = require('sequelize');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -24,16 +25,50 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
   try {
 
-    // find logged in user based on session ID
+    const todayStart = new Date(new Date().setHours(0, 0, 0, 0));
+    const now = new Date();
+    const thirtyAgo = new Date(
+      new Date(new Date().setDate(new Date().getDate() - 30)).setHours(
+        0,
+        0,
+        0,
+        0
+      )
+    );
+
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: { model: Log }
+      include: {
+        model: Log,
+        where: {
+          user_id: req.session.user_id,
+          date: {
+            [Op.gt]: todayStart,
+            [Op.lt]: now
+          }
+        },
+        required: false
+      }
     });
 
     const user = userData.get({ plain: true });
 
+    const monthlyData = await Log.findAll({
+      where: {
+        user_id: req.session.user_id,
+        date: {
+          [Op.gt]: thirtyAgo,
+          [Op.lt]: now
+        }
+      },
+      order: [['date', 'DESC']]
+    });
+
+    const monthly = monthlyData.map((log) => log.get({ plain: true }));
+
     res.render('dashboard', {
       ...user,
+      monthly,
       logged_in: true
     });
 

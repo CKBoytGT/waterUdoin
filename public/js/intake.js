@@ -2,9 +2,12 @@ const intakeHandler = async (event) => {
 
   event.preventDefault();
 
-  const amount = document.querySelector('#amount').value.trim();
+  let amount = document.querySelector('#amount').value.trim();
 
   if (amount) {
+
+    // multiply by 8 to convert glasses to ounces
+    amount *= 8;
 
     const response = await fetch('/api/logs', {
       method: 'POST',
@@ -30,9 +33,12 @@ const goalHandler = async (event) => {
 
   event.preventDefault();
 
-  const waterGoal = document.querySelector('#goal').value.trim();
+  let waterGoal = document.querySelector('#goal').value.trim();
 
   if (waterGoal) {
+
+    // multiply by 8 to convert glasses to ounces
+    waterGoal *= 8;
 
     const response = await fetch('/api/users/goal', {
       method: 'PUT',
