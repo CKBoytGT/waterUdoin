@@ -10,10 +10,18 @@ waterUdoin is a hydration tracking app that helps motivate you towards your goal
 </div>
 
 ## Usage
-Sign up for an account, log in and use the "TRACK INTAKE" feature on your dashboard to keep track of your water intake throughout the day. Each symbol represents one 8 fl oz glass of water. The default is five, but you can receive an amount specific to your needs by entering your info under "Update your metrics."
+Sign up for an account, log in and use the options under "Today's Water Intake" on your dashboard to track your intake for the day. You can also adjust your goal as needed. You can view the progression of how much water you've tracked in your past 30 logs on the line graph. Top scores for the day show in the Leadboard.
 
 ## Screenshots
-Pending.
+
+<div align="center">
+
+![screenshot-1](https://user-images.githubusercontent.com/118075006/231898415-c909fda4-d79a-4530-a1a4-9886321f6e78.jpg)
+![screenshot-2](https://user-images.githubusercontent.com/118075006/231898424-3edfc804-7ccc-46e9-9492-6002e1c87715.jpg)
+![screenshot-3](https://user-images.githubusercontent.com/118075006/231898430-46cb25b7-1576-4780-9a4d-a42ff806a23c.jpg)
+
+</div>
+
 
 ## Authors
 - [Maha Abdelnabi](https://github.com/Maha-Abdelnabi)
