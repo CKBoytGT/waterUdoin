@@ -10,7 +10,7 @@ waterUdoin is a hydration tracking app that helps motivate you towards your goal
 </div>
 
 ## Usage
-Sign up for an account, log in and use the options under "Today's Water Intake" on your dashboard to track your intake for the day.
+Sign up for an account, log in and use the options under "Today's Water Intake" on your dashboard to track your intake for the day. You can also adjust your goal as needed. You can view the progression of how much water you've tracked in your past 30 logs on the line graph. Top scores for the day show in the Leadboard.
 
 ## Screenshots
 
