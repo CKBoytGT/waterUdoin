@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
   try {
 
     // get previous log from today if it exists
-    const todayStart = new Date().setHours(0, 0, 0, 0);
+    const todayStart = new Date(new Date().setHours(0, 0, 0, 0));
     const now = new Date();
 
     const logData = await Log.findAll({
