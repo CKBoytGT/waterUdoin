@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "thirsty_thurston",
+    "email": "thirsty@example.com",
+    "password": "thirstypw",
+    "water_goal": 64
+  },
+  {
+    "id": 2,
+    "username": "hydraBeast",
+    "email": "hydra@example.com",
+    "password": "hydrapw",
+    "water_goal": 64
+  },
+  {
+    "id": 3,
+    "username": "Bubblep0p",
+    "email": "bubble@example.com",
+    "password": "bubblepw",
+    "water_goal": 64
+  },
+  {
+    "id": 4,
+    "username": "dranklord",
+    "email": "drank@example.com",
+    "password": "drankpw",
+    "water_goal": 64
+  },
+  {
+    "id": 5,
+    "username": "thequenchiest",
+    "email": "quench@example.com",
+    "password": "quenchpw",
+    "water_goal": 64
+  }
+]
