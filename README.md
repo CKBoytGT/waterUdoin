@@ -7,6 +7,8 @@
 
 waterUdoin is a hydration tracking app that helps motivate you towards your goal by graphing your data and comparing your rank to other users.
 
+[Try it out here!](https://waterudoin.herokuapp.com/)
+
 </div>
 
 ## Usage
@@ -22,7 +24,6 @@ Sign up for an account, log in and use the options under "Today's Water Intake" 
 
 </div>
 
-
 ## Authors
 - [Maha Abdelnabi](https://github.com/Maha-Abdelnabi)
 - [Christina Boyt](https://github.com/CKBoytGT)
@@ -30,3 +31,6 @@ Sign up for an account, log in and use the options under "Today's Water Intake" 
 - [Graham Knox](https://github.com/Agilitylvl99)
 - [Quoc-Tien Ton](https://github.com/TimothyLai1121)
 - [Hunter Wilson](https://github.com/HunterWilson1)
+
+## Links
+- [waterUdoin on Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
