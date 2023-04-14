@@ -10,7 +10,7 @@
   "rules": {
     // js standard style + semicolons
     "indent": ["error", 2],
-    "quotes": ["error", "single"],
+    // "quotes": ["error", "single"], - this doesn't work with template literals, use prettier instead
     "no-unused-vars": "error",
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "space-before-function-paren": "error",

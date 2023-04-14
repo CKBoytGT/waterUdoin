@@ -3,21 +3,31 @@ const { Log } = require('../../models');
 const { Op } = require('sequelize');
 // const withAuth = require('../../utils/auth');
 
+const formatDate = (date) => {
+
+  return date.toISOString().replace('T', ' ').split('.')[0];
+
+};
+
 // post a new log (and overwrite current day's log if applicable)
 router.post('/', async (req, res) => {
 
   try {
 
     // get previous log from today if it exists
-    const todayStart = new Date().setHours(0, 0, 0, 0);
-    const now = new Date();
+    const todayStart = new Date(
+      new Date(new Date().setHours(0, 0, 0, 0)).setUTCHours(0)
+    );
+    const todayEnd = new Date(
+      new Date(new Date().setHours(23, 59, 59, 999)).setUTCHours(23)
+    );
 
     const logData = await Log.findAll({
       where: {
         user_id: req.session.user_id,
         date: {
-          [Op.gt]: todayStart,
-          [Op.lt]: now
+          [Op.gt]: formatDate(todayStart),
+          [Op.lt]: formatDate(todayEnd)
         }
       }
     });
@@ -41,8 +51,8 @@ router.post('/', async (req, res) => {
           where: {
             user_id: req.session.user_id,
             date: {
-              [Op.gt]: todayStart,
-              [Op.lt]: now
+              [Op.gt]: formatDate(todayStart),
+              [Op.lt]: formatDate(todayEnd)
             }
           }
         }
