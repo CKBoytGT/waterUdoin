@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User, Log } = require('../models');
 const { Op } = require('sequelize');
+const { QueryTypes } = require('sequelize');
 const withAuth = require('../utils/auth');
-// const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
 
@@ -26,17 +27,20 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
   try {
 
-    const todayStart = new Date(new Date().setHours(0, 0, 0, 0));
-    const now = new Date();
-    const thirtyAgo = new Date(
-      new Date(new Date().setDate(new Date().getDate() - 30)).setHours(
-        0,
-        0,
-        0,
-        0
-      )
+    // start and end of today
+    const todayStart = new Date(
+      new Date(new Date().setHours(0, 0, 0, 0)).setUTCHours(0)
     );
+    const now = new Date();
 
+    // 30 days from the start of today
+    let thirtyAgo = new Date(todayStart);
+    thirtyAgo.setDate(thirtyAgo.getDate() - 30);
+
+    // start of today with just the initial date part
+    const formattedDate = todayStart.toISOString().split('T')[0];
+
+    // gets logged in user's current intake for today
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: {
@@ -54,6 +58,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    // get's logged in user's last 30 logs
     const monthlyData = await Log.findAll({
       where: {
         user_id: req.session.user_id,
@@ -67,16 +72,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const monthly = monthlyData.map((log) => log.get({ plain: true }));
 
-    // TODO: get this working after class
-    // const leaderData = await sequelize.query(
-    //   'SELECT user.username, log.amount, (log.amount / user.water_goal * 100) AS "percentReached" FROM log INNER JOIN user ON log.user_id = user.id AND log.date LIKE "2023-04-13%" ORDER BY "percentReached" DESC'
-    // );
-
-    // const leaders = leaderData.map((user) => user.get({ plain: true }));
+    // arranges users by their current day's percentage of goal and gets top 5
+    const leader = await sequelize.query(
+      `SELECT user.username, (log.amount / user.water_goal * 100) AS "percentReached" FROM log INNER JOIN user ON log.user_id = user.id AND log.date LIKE "${formattedDate}%" ORDER BY percentReached DESC LIMIT 5`,
+      { type: QueryTypes.SELECT,
+        raw: true }
+    );
 
     res.render('dashboard', {
       ...user,
       monthly,
+      leader,
       logged_in: true
     });
 

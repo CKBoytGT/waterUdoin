@@ -45,6 +45,16 @@ module.exports = {
     }
 
   },
+  round: (input) => {
+
+    return Math.round(input);
+
+  },
+  is_empty: (array) => {
+
+    return array === '[]';
+
+  },
   stringify: (input) => {
 
     return JSON.stringify(input);

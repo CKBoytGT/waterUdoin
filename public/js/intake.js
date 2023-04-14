@@ -17,7 +17,11 @@ const intakeHandler = async (event) => {
 
     if (response.ok) {
 
-      window.location.reload();
+      setTimeout(() => {
+
+        window.location.reload();
+
+      }, '500');
 
     } else {
 
@@ -48,7 +52,11 @@ const goalHandler = async (event) => {
 
     if (response.ok) {
 
-      window.location.reload();
+      setTimeout(() => {
+
+        window.location.reload();
+
+      }, '500');
 
     } else {
 
