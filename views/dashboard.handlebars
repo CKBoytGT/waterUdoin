@@ -44,7 +44,7 @@
             </div>
         </div>
         <!-- chart -->
-        <div class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[50vh] w-full">
+        <div class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[50vh] w-auto md:px-10">
             <h2 class="text-4xl font-bold text-blue-700 text-right">Last 30 Logs</h2>
             <canvas id="myChart"></canvas>
 
@@ -110,74 +110,35 @@
                 }
                 });
             </script>
-            {{!-- <div class="chart-container">
-                <canvas id="line-chart"></canvas>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
-            <script>
-                new Chart(document.getElementById("line-chart"), {
-                    type: 'line',
-                    data: {
-                        labels: [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-                        datasets: [
-                            {
-                                data: [5, 6, 5, 6, 6,
-                                    6, 5, 6, 5, 6, 5, 7, 5, 6, 7],
-                                label: "Last 30 Logs",
-                                borderColor: "#1d4ed8",
-                                fill: false
-                            }]
-                    },
-                    options: {
-                        title: {
-                            display: true,
-                            text: 'Monthly Intake'
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        },
-                    }
-                });
-            </script> --}}
         </div>
     </div>
-    <div class="md:basis-1/3 flex flex-col w-full text-center">
+    <div class="md:basis-1/3 flex flex-col w-full text-center break-all">
         <h2 class="text-4xl font-bold text-blue-700 mb-4">Site Leaderboard</h2>
+        {{#if leader}}
         <table class="h-full">
             <tr>
                 <thead
-                    class="border-b-2 border-yellow-300 text-white text-m font-sans font-semibold tracking-wide bg-blue-700">
+                    class="break-normal border-b-2 border-yellow-300 text-white text-m font-sans font-semibold tracking-wide bg-blue-700">
                     <th class="p-5">
                         Username</th>
                     <th class="p-5">
                         Today's %</th>
                 </thead>
                 <tbody>
-                    <tr class="border-none bg-white">
+                    {{#each leader}}
+                    <tr class="border-none odd:bg-white even:bg-blue-50">
                         <td class="p-5">{{username}}</td>
-                        <td class="p-5">{{percent_goal logs.0.amount water_goal}}%</td>
+                        <td class="p-5">{{round percentReached}}%</td>
                     </tr>
-                    <tr class="border-none bg-blue-50">
-                        <td class="p-5">hydraBeast</td>
-                        <td class="p-5">75%</td>
-                    </tr>
-                    <tr class="border-none bg-white">
-                        <td class="p-5">Bubblep0p</td>
-                        <td class="p-5">63%</td>
-                    </tr>
-                    <tr class="border-none bg-blue-50">
-                        <td class="p-5">dranklord</td>
-                        <td class="p-5">50%</td>
-                    </tr>
-                    <tr class="border-none bg-white">
-                        <td class="p-5">thequenchiest</td>
-                        <td class="p-5">13%</td>
-                    </tr>
+                    {{/each}}
                 </tbody>
             </tr>
         </table>
+        {{else}}
+        <div>
+            <p><em>Nobody has tracked their intake today.</em></p>
+        </div>
+        {{/if}}
     </div>
 </section>
 
