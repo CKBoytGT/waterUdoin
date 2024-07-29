@@ -1,145 +1,157 @@
 <section
-    class="flex flex-col md:flex-row md:space-x-10 space-y-10 md:space-y-0 py-5 px-10 items-center md:items-stretch justify-center">
-    <div class="flex flex-col space-y-10 md:basis-2/3">
-        <!-- today's water intake -->
-        <div class="flex flex-col items-center space-y-5 pb-5">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold text-blue-700">Today's Water Intake</h2>
-                <p>
-                    <em>One glass equals 8 fluid ounces of water.</em>
-                </p>
-            </div>
-            <div class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-10">
-                <!-- percentage box -->
-                <div
-                    class="flex flex-col text-center bg-gradient-to-br from-sky-400 to-blue-700 rounded-lg text-white aspect-square items-center justify-center p-2">
-                    <h3 class="text-5xl font-bold">{{percent_goal logs.0.amount water_goal}}%</h3>
-                    <p class="text-sm">of your current goal</p>
-                </div>
-                <!-- inputs -->
-                <div class="space-y-4">
-                    <form id="intake-form">
-                        <label for="amount" class="font-bold">Glasses drank today:</label>
-                        <input class="w-10 mx-2" id="amount" type="number" placeholder="{{oz_to_glass logs.0.amount}}"
-                            min="0" max="99"
-                            oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
-                        <button
-                            class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-1 px-4 rounded-full text-md shadow-md"
-                            type="submit">
-                            UPDATE
-                        </button>
-                    </form>
-                    <form id="goal-form">
-                        <label for="goal" class="font-bold">Current daily goal:</label>
-                        <input class="w-10 mx-2" id="goal" type="number" placeholder="{{oz_to_glass water_goal}}"
-                            min="0" max="99"
-                            oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
-                        <button
-                            class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-1 px-4 rounded-full text-md shadow-md"
-                            type="submit">
-                            UPDATE
-                        </button>
-                    </form>
-                </div>
-            </div>
+  class="flex flex-col items-center justify-center space-y-10 xl:max-h-[700px] xl:flex-row xl:items-start xl:space-x-10 xl:space-y-0"
+>
+  <div
+    class="flex basis-0 flex-col items-center space-y-10 md:basis-3/5 xl:basis-2/3"
+  >
+    <!-- today's water intake -->
+    <div class="flex flex-col items-center space-y-5 pb-5">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-blue-700">Today's Water Intake</h2>
+        <p>
+          <em>One glass equals 8 fluid ounces of water.</em>
+        </p>
+      </div>
+      <div
+        class="flex flex-col items-center space-y-10 md:flex-row md:space-x-10 md:space-y-0"
+      >
+        <!-- percentage box -->
+        <div
+          class="flex aspect-square flex-col items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-700 p-2 text-center text-white"
+        >
+          <h3 class="text-5xl font-bold">{{percent_goal
+              logs.[0].amount
+              water_goal
+            }}%</h3>
+          <p class="text-sm">of your current goal</p>
         </div>
-        <!-- chart -->
-        <div class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[50vh] w-auto md:px-10">
-            <h2 class="text-4xl font-bold text-blue-700 text-right">Last 30 Logs</h2>
-            <canvas id="myChart"></canvas>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.min.js"
-                integrity="sha512-GCiwmzA0bNGVsp1otzTJ4LWQT2jjGJENLGyLlerlzckNI30moi2EQT0AfRI7fLYYYDKR+7hnuh35r3y1uJzugw=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-            <script>
-                const ctx = document.getElementById('myChart');
-
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
-                        datasets: [{
-                            label: 'Glasses per Day Logged',
-                            borderColor: '#1d4ed8',
-                            data: [{{ null_to_zero monthly.29.amount }},
-                        {{ null_to_zero monthly.28.amount }},
-                    {{ null_to_zero monthly.27.amount }},
-                    {{ null_to_zero monthly.26.amount }},
-                    {{ null_to_zero monthly.25.amount }},
-                    {{ null_to_zero monthly.25.amount }},
-                    {{ null_to_zero monthly.23.amount }},
-                    {{ null_to_zero monthly.22.amount }},
-                    {{ null_to_zero monthly.21.amount }},
-                    {{ null_to_zero monthly.20.amount }},
-                    {{ null_to_zero monthly.19.amount }},
-                    {{ null_to_zero monthly.18.amount }},
-                    {{ null_to_zero monthly.17.amount }},
-                    {{ null_to_zero monthly.16.amount }},
-                    {{ null_to_zero monthly.15.amount }},
-                    {{ null_to_zero monthly.14.amount }},
-                    {{ null_to_zero monthly.13.amount }},
-                    {{ null_to_zero monthly.12.amount }},
-                    {{ null_to_zero monthly.11.amount }},
-                    {{ null_to_zero monthly.10.amount }},
-                    {{ null_to_zero monthly.9.amount }},
-                    {{ null_to_zero monthly.8.amount }},
-                    {{ null_to_zero monthly.7.amount }},
-                    {{ null_to_zero monthly.6.amount }},
-                    {{ null_to_zero monthly.5.amount }},
-                    {{ null_to_zero monthly.4.amount }},
-                    {{ null_to_zero monthly.3.amount }},
-                    {{ null_to_zero monthly.2.amount }},
-                    {{ null_to_zero monthly.1.amount }},
-                    {{ null_to_zero monthly.0.amount }},],
-                    borderWidth: 1
-                    }]
-                },
-                    options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Intake (fl oz)'
-                            }
-                        }
-                    }
-                }
-                });
-            </script>
+        <!-- inputs -->
+        <div class="space-y-4">
+          <form id="intake-form">
+            <label for="amount" class="font-bold">Glasses drank today:</label>
+            <input
+              class="mx-2 w-10 text-center"
+              id="amount"
+              type="number"
+              placeholder="{{oz_to_glass logs.[0].amount}}"
+              min="0"
+              max="99"
+              oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+            />
+            <button
+              class="text-md rounded-full bg-blue-700 px-4 py-1 font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
+              type="submit"
+            >
+              UPDATE
+            </button>
+          </form>
+          <form id="goal-form">
+            <label for="goal" class="font-bold">Current daily goal:</label>
+            <input
+              class="mx-2 w-10 text-center"
+              id="goal"
+              type="number"
+              placeholder="{{oz_to_glass water_goal}}"
+              min="0"
+              max="99"
+              oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+            />
+            <button
+              class="text-md rounded-full bg-blue-700 px-4 py-1 font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
+              type="submit"
+            >
+              UPDATE
+            </button>
+          </form>
         </div>
+      </div>
     </div>
-    <div class="md:basis-1/3 flex flex-col w-full text-center break-all">
-        <h2 class="text-4xl font-bold text-blue-700 mb-4">Site Leaderboard</h2>
-        {{#if leader}}
-        <table class="h-full">
-            <tr>
-                <thead
-                    class="break-normal border-b-2 border-yellow-300 text-white text-m font-sans font-semibold tracking-wide bg-blue-700">
-                    <th class="p-5">
-                        Username</th>
-                    <th class="p-5">
-                        Today's %</th>
-                </thead>
-                <tbody>
-                    {{#each leader}}
-                    <tr class="border-none odd:bg-white even:bg-blue-50">
-                        <td class="p-5">{{username}}</td>
-                        <td class="p-5">{{round percentReached}}%</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </tr>
-        </table>
-        {{else}}
-        <div>
-            <p><em>Nobody has tracked their intake today.</em></p>
-        </div>
-        {{/if}}
+    <!-- chart -->
+    <div class="w-full xl:max-w-[760px]">
+      <h2 class="text-center text-4xl font-bold text-blue-700">Last 30 Logs</h2>
+      <canvas id="myChart"></canvas>
+
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.min.js"
+        integrity="sha512-GCiwmzA0bNGVsp1otzTJ4LWQT2jjGJENLGyLlerlzckNI30moi2EQT0AfRI7fLYYYDKR+7hnuh35r3y1uJzugw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+
+      <script>
+        const ctx = document.getElementById('myChart'); new Chart(ctx, { type:
+        'line', data: { labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9',
+        '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21',
+        '22', '23', '24', '25', '26', '27', '28', '29', '30'], datasets: [{
+        label: 'Glasses per Day Logged', borderColor: '#1d4ed8', data: [{{null_to_zero
+          monthly.[29].amount
+        }},
+        {{null_to_zero monthly.[28].amount}},
+        {{null_to_zero monthly.[27].amount}},
+        {{null_to_zero monthly.[26].amount}},
+        {{null_to_zero monthly.[25].amount}},
+        {{null_to_zero monthly.[25].amount}},
+        {{null_to_zero monthly.[23].amount}},
+        {{null_to_zero monthly.[22].amount}},
+        {{null_to_zero monthly.[21].amount}},
+        {{null_to_zero monthly.[20].amount}},
+        {{null_to_zero monthly.[19].amount}},
+        {{null_to_zero monthly.[18].amount}},
+        {{null_to_zero monthly.[17].amount}},
+        {{null_to_zero monthly.[16].amount}},
+        {{null_to_zero monthly.[15].amount}},
+        {{null_to_zero monthly.[14].amount}},
+        {{null_to_zero monthly.[13].amount}},
+        {{null_to_zero monthly.[12].amount}},
+        {{null_to_zero monthly.[11].amount}},
+        {{null_to_zero monthly.[10].amount}},
+        {{null_to_zero monthly.[9].amount}},
+        {{null_to_zero monthly.[8].amount}},
+        {{null_to_zero monthly.[7].amount}},
+        {{null_to_zero monthly.[6].amount}},
+        {{null_to_zero monthly.[5].amount}},
+        {{null_to_zero monthly.[4].amount}},
+        {{null_to_zero monthly.[3].amount}},
+        {{null_to_zero monthly.[2].amount}},
+        {{null_to_zero monthly.[1].amount}},
+        {{null_to_zero monthly.[0].amount}},], borderWidth: 1 }] }, options: {
+        responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero:
+        true, title: { display: true, text: 'Intake (fl oz)' } } } } });
+      </script>
     </div>
+  </div>
+  <!-- leaderboard -->
+  <div
+    class="flex w-full basis-0 flex-col break-all text-center md:basis-2/5 xl:basis-1/3"
+  >
+    <h2 class="mb-4 text-4xl font-bold text-blue-700">Site Leaderboard</h2>
+    {{#if leader}}
+      <table class="h-full">
+        <tr>
+          <thead
+            class="text-m break-normal border-b-2 border-yellow-300 bg-blue-700 font-sans font-semibold tracking-wide text-white"
+          >
+            <th class="p-5">
+              Username</th>
+            <th class="p-5">
+              Today's %</th>
+          </thead>
+          <tbody>
+            {{#each leader}}
+              <tr class="border-none odd:bg-white even:bg-blue-50">
+                <td class="p-5 text-center">{{username}}</td>
+                <td class="p-5 text-center">{{round percentReached}}%</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </tr>
+      </table>
+    {{else}}
+      <div>
+        <p><em>Nobody has tracked their intake today.</em></p>
+      </div>
+    {{/if}}
+  </div>
 </section>
 
 <script src="/js/intake.js" type="application/javascript"></script>

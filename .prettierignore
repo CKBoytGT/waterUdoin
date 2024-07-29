@@ -1,5 +1,3 @@
-*.md
-.gitignore
-.env.EXAMPLE
-.eslintignore
-.prettierignore
+# Ignore artifacts:
+build
+coverage
