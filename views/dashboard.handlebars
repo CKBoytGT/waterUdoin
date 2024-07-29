@@ -1,5 +1,5 @@
 <section
-  class="flex flex-col xl:flex-row xl:space-x-10 space-y-10 xl:space-y-0 items-center xl:items-stretch justify-center"
+  class="flex flex-col items-center justify-center space-y-10 xl:flex-row xl:items-stretch xl:space-x-10 xl:space-y-0"
 >
   <div class="flex flex-col space-y-10 xl:basis-2/3">
     <!-- today's water intake -->
@@ -11,14 +11,14 @@
         </p>
       </div>
       <div
-        class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-10"
+        class="flex flex-col items-center space-y-10 md:flex-row md:space-x-10 md:space-y-0"
       >
         <!-- percentage box -->
         <div
-          class="flex flex-col text-center bg-gradient-to-br from-sky-400 to-blue-700 rounded-lg text-white aspect-square items-center justify-center p-2"
+          class="flex aspect-square flex-col items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-700 p-2 text-center text-white"
         >
           <h3 class="text-5xl font-bold">{{percent_goal
-              logs.0.amount
+              logs.[0].amount
               water_goal
             }}%</h3>
           <p class="text-sm">of your current goal</p>
@@ -28,16 +28,16 @@
           <form id="intake-form">
             <label for="amount" class="font-bold">Glasses drank today:</label>
             <input
-              class="w-10 mx-2 text-center"
+              class="mx-2 w-10 text-center"
               id="amount"
               type="number"
-              placeholder="{{oz_to_glass logs.0.amount}}"
+              placeholder="{{oz_to_glass logs.[0].amount}}"
               min="0"
               max="99"
               oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
             />
             <button
-              class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-1 px-4 rounded-full text-md shadow-md"
+              class="text-md rounded-full bg-blue-700 px-4 py-1 font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
               type="submit"
             >
               UPDATE
@@ -46,7 +46,7 @@
           <form id="goal-form">
             <label for="goal" class="font-bold">Current daily goal:</label>
             <input
-              class="w-10 mx-2 text-center"
+              class="mx-2 w-10 text-center"
               id="goal"
               type="number"
               placeholder="{{oz_to_glass water_goal}}"
@@ -55,7 +55,7 @@
               oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
             />
             <button
-              class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-1 px-4 rounded-full text-md shadow-md"
+              class="text-md rounded-full bg-blue-700 px-4 py-1 font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
               type="submit"
             >
               UPDATE
@@ -67,9 +67,9 @@
     <!-- chart -->
     <div
       {{! class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[50vh] w-auto md:px-10" }}
-      class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[40vh]"
+      class="flex max-h-[25vh] flex-col items-center justify-center md:max-h-[40vh]"
     >
-      <h2 class="text-4xl font-bold text-blue-700 text-right">Last 30 Logs</h2>
+      <h2 class="text-right text-4xl font-bold text-blue-700">Last 30 Logs</h2>
       <canvas id="myChart"></canvas>
 
       <script
@@ -85,50 +85,50 @@
         '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21',
         '22', '23', '24', '25', '26', '27', '28', '29', '30'], datasets: [{
         label: 'Glasses per Day Logged', borderColor: '#1d4ed8', data: [{{null_to_zero
-          monthly.29.amount
+          monthly.[29].amount
         }},
-        {{null_to_zero monthly.28.amount}},
-        {{null_to_zero monthly.27.amount}},
-        {{null_to_zero monthly.26.amount}},
-        {{null_to_zero monthly.25.amount}},
-        {{null_to_zero monthly.25.amount}},
-        {{null_to_zero monthly.23.amount}},
-        {{null_to_zero monthly.22.amount}},
-        {{null_to_zero monthly.21.amount}},
-        {{null_to_zero monthly.20.amount}},
-        {{null_to_zero monthly.19.amount}},
-        {{null_to_zero monthly.18.amount}},
-        {{null_to_zero monthly.17.amount}},
-        {{null_to_zero monthly.16.amount}},
-        {{null_to_zero monthly.15.amount}},
-        {{null_to_zero monthly.14.amount}},
-        {{null_to_zero monthly.13.amount}},
-        {{null_to_zero monthly.12.amount}},
-        {{null_to_zero monthly.11.amount}},
-        {{null_to_zero monthly.10.amount}},
-        {{null_to_zero monthly.9.amount}},
-        {{null_to_zero monthly.8.amount}},
-        {{null_to_zero monthly.7.amount}},
-        {{null_to_zero monthly.6.amount}},
-        {{null_to_zero monthly.5.amount}},
-        {{null_to_zero monthly.4.amount}},
-        {{null_to_zero monthly.3.amount}},
-        {{null_to_zero monthly.2.amount}},
-        {{null_to_zero monthly.1.amount}},
-        {{null_to_zero monthly.0.amount}},], borderWidth: 1 }] }, options: {
+        {{null_to_zero monthly.[28].amount}},
+        {{null_to_zero monthly.[27].amount}},
+        {{null_to_zero monthly.[26].amount}},
+        {{null_to_zero monthly.[25].amount}},
+        {{null_to_zero monthly.[25].amount}},
+        {{null_to_zero monthly.[23].amount}},
+        {{null_to_zero monthly.[22].amount}},
+        {{null_to_zero monthly.[21].amount}},
+        {{null_to_zero monthly.[20].amount}},
+        {{null_to_zero monthly.[19].amount}},
+        {{null_to_zero monthly.[18].amount}},
+        {{null_to_zero monthly.[17].amount}},
+        {{null_to_zero monthly.[16].amount}},
+        {{null_to_zero monthly.[15].amount}},
+        {{null_to_zero monthly.[14].amount}},
+        {{null_to_zero monthly.[13].amount}},
+        {{null_to_zero monthly.[12].amount}},
+        {{null_to_zero monthly.[11].amount}},
+        {{null_to_zero monthly.[10].amount}},
+        {{null_to_zero monthly.[9].amount}},
+        {{null_to_zero monthly.[8].amount}},
+        {{null_to_zero monthly.[7].amount}},
+        {{null_to_zero monthly.[6].amount}},
+        {{null_to_zero monthly.[5].amount}},
+        {{null_to_zero monthly.[4].amount}},
+        {{null_to_zero monthly.[3].amount}},
+        {{null_to_zero monthly.[2].amount}},
+        {{null_to_zero monthly.[1].amount}},
+        {{null_to_zero monthly.[0].amount}},], borderWidth: 1 }] }, options: {
         responsive: true, maintainAspectRatio: false, scales: { y: {
         beginAtZero: true, title: { display: true, text: 'Intake (fl oz)' } } }
         } });
       </script>
     </div>
   </div>
-  <div class="md:basis-1/3 flex flex-col w-full text-center break-all">
-    <h2 class="text-4xl font-bold text-blue-700 mb-4">Site Leaderboard</h2>
+  <div class="flex w-full flex-col break-all text-center md:basis-1/3">
+    <h2 class="mb-4 text-4xl font-bold text-blue-700">Site Leaderboard</h2>
     {{#if leader}}
       <table class="h-full">
         <tr>
           <thead
-            class="break-normal border-b-2 border-yellow-300 text-white text-m font-sans font-semibold tracking-wide bg-blue-700"
+            class="text-m break-normal border-b-2 border-yellow-300 bg-blue-700 font-sans font-semibold tracking-wide text-white"
           >
             <th class="p-5">
               Username</th>

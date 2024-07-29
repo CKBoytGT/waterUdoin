@@ -12,6 +12,7 @@ waterUdoin is a hydration tracking app that helps motivate you towards your goal
 </div>
 
 ## Usage
+
 Sign up for an account, log in and use the options under "Today's Water Intake" on your dashboard to track your intake for the day. You can also adjust your goal as needed. You can view the progression of how much water you've tracked in your past 30 logs on the line graph. Top scores for the day show in the Leadboard.
 
 ## Screenshots
@@ -25,6 +26,7 @@ Sign up for an account, log in and use the options under "Today's Water Intake" 
 </div>
 
 ## Authors
+
 - [Maha Abdelnabi](https://github.com/Maha-Abdelnabi)
 - [Christina Boyt](https://github.com/CKBoytGT)
 - [Cailen Hamm](https://github.com/cailenh)
@@ -33,4 +35,5 @@ Sign up for an account, log in and use the options under "Today's Water Intake" 
 - [Hunter Wilson](https://github.com/HunterWilson1)
 
 ## Links
+
 - [waterUdoin on Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)

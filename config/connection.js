@@ -15,7 +15,7 @@ if (process.env.JAWSDB_URL) {
       dialect: "mysql",
       port: 3306,
       timezone: "-04:00",
-    }
+    },
   );
 }
 

@@ -1,26 +1,33 @@
-<body class="flex flex-col items-center justify-center h-screen bg-gray-200">
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-xs">
+<body class="flex h-screen flex-col items-center justify-center bg-gray-200">
+  <form class="mb-4 max-w-xs rounded bg-white px-8 pb-8 pt-6 shadow-md">
     <div class="mb-4">
-      <label class="block text-gray-700 font-bold mb-2" for="weight">
+      <label class="mb-2 block font-bold text-gray-700" for="weight">
         Weight (in pounds)
       </label>
       <input
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="weight" type="number" placeholder="Enter your weight">
+        class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+        id="weight"
+        type="number"
+        placeholder="Enter your weight"
+      />
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 font-bold mb-2" for="exercise-time">
-        Average Exercise Time
-        (in minutes)
+      <label class="mb-2 block font-bold text-gray-700" for="exercise-time">
+        Average Exercise Time (in minutes)
       </label>
       <input
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="exercise-time" type="number" placeholder="Enter your exercise time">
+        class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+        id="exercise-time"
+        type="number"
+        placeholder="Enter your exercise time"
+      />
     </div>
     <div class="mb-4">
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-        id="calculate-button" type="submit">
+        class="focus:shadow-outline w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+        id="calculate-button"
+        type="submit"
+      >
         Calculate Water Goal
       </button>
     </div>
@@ -29,3 +36,4 @@
     </div>
   </form>
   <script src="/js/waterGoal.js"></script>
+</body>

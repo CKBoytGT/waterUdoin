@@ -1,53 +1,81 @@
 <section
-  class="h-full max-w-5xl mx-auto flex flex-col md:flex-row items-center text-black py-10 px-8 space-y-6 md:space-y-0 md:space-x-20">
-  <div class="bg-white p-4 rounded-lg shadow-md flex flex-col w-full">
-    <h2 class="text-2xl font-bold text-center mb-2 text-blue-700">Log In</h2>
+  class="mx-auto flex h-full max-w-5xl flex-col items-center space-y-6 px-8 py-10 text-black md:flex-row md:space-x-20 md:space-y-0"
+>
+  <div class="flex w-full flex-col rounded-lg bg-white p-4 shadow-md">
+    <h2 class="mb-2 text-center text-2xl font-bold text-blue-700">Log In</h2>
     <form id="login-form" class="space-y-4">
       <div>
-        <label class="block mb-2 font-semibold">Email</label>
-        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" type="email"
-          name="email" id="email" placeholder="Enter your email address" required />
+        <label class="mb-2 block font-semibold">Email</label>
+        <input
+          class="w-full rounded-lg border px-4 py-2 focus:border-blue-700 focus:outline-none"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email address"
+          required
+        />
       </div>
       <div>
-        <label class="block mb-2 font-semibold">Password</label>
-        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" type="password"
-          name="password" id="password" placeholder="Enter your password" required />
+        <label class="mb-2 block font-semibold">Password</label>
+        <input
+          class="w-full rounded-lg border px-4 py-2 focus:border-blue-700 focus:outline-none"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
       </div>
       <div class="text-center">
         <button
-          class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-2 px-6 rounded-full text-xl shadow-md"
-          type="submit">
+          class="rounded-full bg-blue-700 px-6 py-2 text-xl font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
+          type="submit"
+        >
           LOG IN
         </button>
       </div>
     </form>
   </div>
-  <div class="bg-white p-4 rounded-lg shadow-md flex flex-col w-full">
-    <h2 class="text-2xl font-bold text-center mb-2 text-blue-700">Register</h2>
+  <div class="flex w-full flex-col rounded-lg bg-white p-4 shadow-md">
+    <h2 class="mb-2 text-center text-2xl font-bold text-blue-700">Register</h2>
     <form id="signup-form" class="space-y-4">
       <div>
-        <label class="block mb-2 font-semibold">Username</label>
-        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" id="register-name"
-          type="text" placeholder="Enter your desired username" />
+        <label class="mb-2 block font-semibold">Username</label>
+        <input
+          class="w-full rounded-lg border px-4 py-2 focus:border-blue-700 focus:outline-none"
+          id="register-name"
+          type="text"
+          placeholder="Enter your desired username"
+        />
       </div>
       <div>
-        <label class="block mb-2 font-semibold">Email</label>
-        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700" id="register-email"
-          type="email" placeholder="Enter your email address" />
+        <label class="mb-2 block font-semibold">Email</label>
+        <input
+          class="w-full rounded-lg border px-4 py-2 focus:border-blue-700 focus:outline-none"
+          id="register-email"
+          type="email"
+          placeholder="Enter your email address"
+        />
       </div>
       <div>
-        <label class="block mb-2 font-semibold">Password</label>
-        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-700"
-          id="register-password" type="password" placeholder="Enter a secure password" />
+        <label class="mb-2 block font-semibold">Password</label>
+        <input
+          class="w-full rounded-lg border px-4 py-2 focus:border-blue-700 focus:outline-none"
+          id="register-password"
+          type="password"
+          placeholder="Enter a secure password"
+        />
       </div>
       <div class="text-center">
         <button
-          class="bg-blue-700 hover:bg-yellow-300 text-white hover:text-blue-700 tracking-wide font-thin py-2 px-6 rounded-full text-xl shadow-md"
-          type="submit">
+          class="rounded-full bg-blue-700 px-6 py-2 text-xl font-thin tracking-wide text-white shadow-md hover:bg-yellow-300 hover:text-blue-700"
+          type="submit"
+        >
           SIGN UP
         </button>
       </div>
     </form>
+  </div>
 </section>
 
 <script src="/js/login.js" type="application/javascript"></script>
