@@ -1,7 +1,9 @@
 <section
-  class="flex flex-col items-center justify-center space-y-10 xl:flex-row xl:items-stretch xl:space-x-10 xl:space-y-0"
+  class="flex flex-col items-center justify-center space-y-10 xl:max-h-[700px] xl:flex-row xl:items-start xl:space-x-10 xl:space-y-0"
 >
-  <div class="flex flex-col space-y-10 xl:basis-2/3">
+  <div
+    class="flex basis-0 flex-col items-center space-y-10 md:basis-3/5 xl:basis-2/3"
+  >
     <!-- today's water intake -->
     <div class="flex flex-col items-center space-y-5 pb-5">
       <div class="text-center">
@@ -65,11 +67,8 @@
       </div>
     </div>
     <!-- chart -->
-    <div
-      {{! class="flex flex-col items-center justify-center max-h-[25vh] md:max-h-[50vh] w-auto md:px-10" }}
-      class="flex max-h-[25vh] flex-col items-center justify-center md:max-h-[40vh]"
-    >
-      <h2 class="text-right text-4xl font-bold text-blue-700">Last 30 Logs</h2>
+    <div class="w-full xl:max-w-[760px]">
+      <h2 class="text-center text-4xl font-bold text-blue-700">Last 30 Logs</h2>
       <canvas id="myChart"></canvas>
 
       <script
@@ -116,13 +115,15 @@
         {{null_to_zero monthly.[2].amount}},
         {{null_to_zero monthly.[1].amount}},
         {{null_to_zero monthly.[0].amount}},], borderWidth: 1 }] }, options: {
-        responsive: true, maintainAspectRatio: false, scales: { y: {
-        beginAtZero: true, title: { display: true, text: 'Intake (fl oz)' } } }
-        } });
+        responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero:
+        true, title: { display: true, text: 'Intake (fl oz)' } } } } });
       </script>
     </div>
   </div>
-  <div class="flex w-full flex-col break-all text-center md:basis-1/3">
+  <!-- leaderboard -->
+  <div
+    class="flex w-full basis-0 flex-col break-all text-center md:basis-2/5 xl:basis-1/3"
+  >
     <h2 class="mb-4 text-4xl font-bold text-blue-700">Site Leaderboard</h2>
     {{#if leader}}
       <table class="h-full">
