@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seeds.js",
     "lint": "npx eslint **/*.js",
     "prettier": "npx prettier --check **/*.js",
     "dev": "NODE_ENV=development npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
