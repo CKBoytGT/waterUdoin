@@ -25,7 +25,7 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
+        is: /^([\w.-]+)@(\[(\d{1,3}\.){3}|(?!mteen|gmxxail)(([a-zA-Z\d-]+\.)+))([a-zA-Z]{2,4}|\d{1,3})(\]?)$/i,
       },
     },
     password: {
